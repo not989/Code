@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int n,e,f,c,p,q,r,d,i;
+
+    scanf("%lld", &n);
+        
+        for(i=0;i<n;i++){
+        
+        scanf("%lld %lld %lld",&e, &f, &c);
+        p = e+f;
+        q=0;d=0;
+
+        if(c>p){
+            printf("0\n");
+            continue;
+        }
+        while(1){
+
+            q=p/c;
+            r=p%c;
+
+            if(q==1){
+                if((q+r)==c){
+                    d++;
+                }
+            }
+
+            p=(q+r);
+            d=q+d;
+
+            if(q<=1)break;
+        }
+
+    printf("%lld\n", d);
+
+    }
+
+    return 0;
+}
+

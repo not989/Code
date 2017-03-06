@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+    long long int p, q, n, k=1, sum, i;
+
+    while (scanf("%lld",&n)==1){
+
+        for(k=1;k<=n;k++){
+        scanf("%lld%lld", &p, &q);
+
+        sum=0;
+
+        if(p%2==0)i=p+1;
+
+        else{i=p;}
+
+        for(;i<=q;i=i+2){
+            sum=sum+i;
+        }
+        printf("Case %lld: %lld\n",k, sum);
+        }
+    }
+    return 0;
+}
+

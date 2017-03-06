@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    long int n,g,l,i;
+
+    scanf("%ld", &n);
+
+    for(i=0; i<n; i++){
+        scanf("%ld %ld", &g, &l);
+
+        if(l%g==0){
+            printf("%ld %ld\n",g,l);
+        }
+        else{
+            printf("-1\n");
+        }
+    }
+
+    return 0;
+}
+

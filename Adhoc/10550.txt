@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+    long long int pos, first, sec, third, sum,sum1, sum2, sum3;
+
+    while(scanf("%lld%lld%lld%lld",&pos, &first, &sec, &third)==4)
+    {
+        if(pos==0 && first==0 && sec==0 && third==0)break;
+
+        else
+        {
+            if(pos >= first)
+                sum1=(80*9)+(pos-first)*9;
+            else
+            {
+                sum1=(80*9)+(40+pos-first)*9;
+            }
+
+            if(first <= sec)
+                sum2=(40*9)+(sec-first)*9;
+            else
+            {
+                sum2=(40*9)+(40-first+sec)*9;
+            }
+
+            if(sec < third)
+                sum3=(40+sec-third)*9;
+            else
+            {
+                sum3=(sec-third)*9;
+            }
+
+            sum=sum1+sum2+sum3;
+
+            printf("%lld\n",sum);
+        }
+    }
+
+    return 0;
+}

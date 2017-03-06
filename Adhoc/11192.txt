@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char st[200], temp;
+    long long int i, j, l, n, len, num;
+
+    while(scanf("%lld", &n)==1)
+    {
+        if(n==0)break;
+        getchar();
+        scanf("%s",st);
+
+        len=strlen(st);
+        num=len/n;
+
+        for(i=0; i<len;   i=(i+num))
+        {
+            for(j=0,l=(i+num-1); j<num; j++,l--)
+            {
+                printf("%c", st[l]);
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int a[50],m1,m2,i,j,n;
+
+    scanf("%lld", &n);
+
+    for(i=0; i <= n; i++){
+
+        if(i==0){
+            printf("Lumberjacks:\n");
+            continue;
+        }
+
+
+        for(j=0; j<10; j++){
+
+            scanf("%lld", &a[j]);
+        }
+        m1=a[0]; m2=a[9];
+
+        if(m1 > m2){
+            for(j=9; j>0; j--){
+                if(a[j] < a[j-1]);
+                else{
+                    printf("Unordered\n");
+                    break;
+                }
+            }
+            if(j==0){
+                printf("Ordered\n");
+            }
+        }
+
+        else if(m2 > m1){
+            for(j=0;j < 9; j++){
+                if(a[j] < a[j+1]);
+                else{
+                printf("Unordered\n");
+                break;
+                }
+            }
+            if(j==9)printf("Ordered\n");
+        }
+
+        else{printf("Unordered\n");}
+    }
+    return 0;
+}
+

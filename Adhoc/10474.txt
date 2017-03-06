@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int ara[10005],n,nq,i,j,q,k=1,flag;
+
+    while(scanf("%lld%lld",&n, &nq)==2 &&(n!=0 && nq !=0))
+    {
+        for(i=0;i<n;i++)scanf("%lld", &ara[i]);
+        sort(ara, ara+i);
+
+        flag=0;
+        for(j=0;j<nq;j++)
+        {
+            scanf("%lld", &q);
+
+            if(flag==0) printf("CASE# %lld:\n",k++);
+
+            for(i=0;i<n;i++)
+            {
+                if(ara[i]==q)
+                {
+                    printf("%lld found at %lld\n",q, (i+1));
+                    break;
+                }
+            }
+            if(i==n)printf("%lld not found\n",q);
+            flag=1;
+        }
+    }
+
+    return 0;
+}

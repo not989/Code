@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    long long int i,j,len;
+
+    char str[200];
+
+    while(gets(str)){
+        for(i=0;str[i]!='\0';i++){
+            str[i]=str[i]-7;
+        }
+        printf("%s\n",str);
+    }
+
+    return 0;
+}

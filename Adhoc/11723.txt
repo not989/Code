@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main()
+{
+    long long int r,n,i,sum,k=1;
+
+    while(scanf("%lld%lld", &r, &n)==2)
+    {
+        if(r==0 && n==0)break;
+
+        if(r>n)
+        {
+            sum=n;
+            for(i=1; i<=26; i++)
+            {
+                sum=n+n*i;
+                if(sum>=r)break;
+            }
+
+            if(i==27)printf("Case %lld: impossible\n",k);
+            
+            else
+            {printf("Case %lld: %lld\n", k, i);}
+        }
+
+        else{printf("Case %lld: 0\n",k);}
+        k++;
+    }
+    return 0;
+}

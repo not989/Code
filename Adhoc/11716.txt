@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+int main()
+{
+    char str1[10005],str2[105][105];
+    long long int len,i,j,n,row,k,flag;
+
+    while(scanf("%lld", &n)==1)
+    {
+        getchar();
+        while(n--)
+        {
+            gets(str1);
+            len=strlen(str1);
+
+            row=sqrt(len);
+            flag=0;
+
+            if((row*row)==len)
+            {
+                for(i=0,k=0; i<row; i++)
+                {
+                    for(j=0; j<row; j++)
+                    {
+                        str2[i][j]=str1[k];
+                        k++;
+                    }
+                }
+                flag=1;
+            }
+            else{printf("INVALID\n");}
+
+            if(flag==1)
+            {
+                for(i=0,k=0; i<row; i++)
+                {
+                    for(j=0; j<row; j++)
+                    {
+                        printf("%c",str2[j][i]);
+                    }
+                }
+                printf("\n");
+            }
+        }
+    }
+    return 0;
+}

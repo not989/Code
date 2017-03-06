@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main()
+{
+    long long int a[30],t,i,n,p,q,k,sum=0,num=0,l,m;
+
+    scanf("%lld", &t);
+
+    for(k=1; k<=t; k++)
+    {
+        scanf("%lld", &n);
+        scanf("%lld%lld", &p, &q);
+
+        for(i=0; i<n; i++)
+        {
+            scanf("%lld", &a[i]);
+        }
+
+        sum=0;
+        num=0;
+
+        for(m=0; m<n ; m++)
+        {
+            sum=sum+a[m];
+            if(num<=p && sum<=q)
+            {
+                num++;
+            }
+        }
+        if(num>p)num--;
+
+    printf("Case %lld: %lld\n", k, num);
+
+    }
+
+    return 0;
+}

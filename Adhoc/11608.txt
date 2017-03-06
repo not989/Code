@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long int created[50], required[50], sum, i, j=1;
+
+    while(scanf("%lld", &created[0])==1)
+    {
+        if(created[0]<0)break;
+
+        else
+        {
+
+            for(i=1; i<=12; i++)scanf("%lld", &created[i]);
+
+            for(i=0; i<12; i++)scanf("%lld", &required[i]);
+
+            sum=0;
+
+            printf("Case %lld:\n",j++);
+            for(i=0; i<12; i++)
+            {
+                sum=sum+created[i];
+
+                if(sum>= required[i])
+                {
+                    sum=sum - required[i];
+                    printf("No problem! :D\n");
+                }
+                else{printf("No problem. :(\n");}
+            }
+        }
+    }
+    return 0;
+}
+
+

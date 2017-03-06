@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+    long long int a,b,c,n,i;
+
+    while(scanf("%lld",&n)==1){
+
+        if(n>=20)break;
+
+        for(i=1;i<=n;i++){
+            scanf("%lld%lld%lld",&a, &b, &c);
+
+            if((a>10000 || a<1000)||(b>10000 || b<1000)||(c>10000 || c<1000))break;
+
+            if((a>b && a<c) || (a>c && a<b))printf("Case %lld: %lld\n", i, a);
+
+            else if((b>a && b<c) || (b>c && b<a))printf("Case %lld: %lld\n", i, b);
+
+            else{printf("Case %lld: %lld\n", i, c);}
+        }
+        break;
+    }
+
+    return 0;
+}
+

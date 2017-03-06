@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int n,sum,ara[20],i,count,d,j,m,k;
+
+    printf("PERFECTION OUTPUT\n");
+
+    while(scanf("%lld", &n)==1){
+
+
+        i=0;count=0;d=n;sum=0;
+
+
+        if(n==0){
+            printf("END OF OUTPUT\n");
+            break;
+        }
+
+
+        for(i=0;d!=0;i++){
+            ara[i]=d%10;
+            d=d/10;
+            count++;
+        }
+
+
+        if(count>5)printf("%lld",n);
+        else{
+            for(j=0,k=count;j<5;j++){
+                if(j<(5-count))printf(" ");
+                else {printf("%lld",ara[--k]);}
+            }
+
+            for(i=1; i<=(n/2); i++){
+                if(n%i==0){
+                    m=n/i;
+                    sum= sum+i;
+                }
+            }
+        }
+
+
+        if(sum==n)printf("  PERFECT\n");
+        else if(sum > n)printf("  ABUNDANT\n");
+        else{printf("  DEFICIENT\n");}
+    }
+    return 0;
+}
+

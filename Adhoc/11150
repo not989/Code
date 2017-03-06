@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int n,a,p,sum;
+
+    while(scanf("%lld", &n)==1){
+
+        p=n;sum=0;a=1;
+
+        while(a!=0){
+           if(p==2)p=3;
+            a=p/3;
+            p = a + (p%3);
+            sum=sum+a;
+        }
+        printf("%lld\n", (sum+n));
+
+    }
+    return 0;
+}
+

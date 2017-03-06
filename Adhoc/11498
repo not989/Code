@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main()
+
+{
+    long long int a[1000],b[1000];
+    long long int n,i,p,q;
+
+    while(scanf("%lld", &n)==1){
+    scanf("%lld%lld",&p,&q);
+
+    for(i=0;i<n;i++){
+        scanf("%lld%lld",&a[i], &b[i]);
+    }
+    for(i=0;i<n;i++){
+        if(a[i]==p||b[i]==q){
+        printf("divisa\n");
+    }
+        else if(n==0)break;
+
+        else if(a[i] > p && b[i] > q){
+            printf("NE\n");
+        }
+        else if(a[i] < p && b[i] > q){
+            printf("NO\n");
+        }
+
+        else if(a[i] < p && b[i] < q){
+            printf("SO\n");
+        }
+         else{
+            printf("SE\n");
+        }
+    }
+
+    }
+
+    return 0;
+}
+

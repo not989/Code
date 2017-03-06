@@ -1,0 +1,57 @@
+#include <stdio.h>
+int main()
+{
+    long long int n, i, i_hour, i_min, r_hour, r_min;
+    char c;
+
+    scanf("%lld", &n);
+
+    for(i=0; i<n; i++)
+    {
+        scanf("%lld:%lld", &i_hour, &i_min);
+
+        if(i_min==0)
+        {
+            if(i_hour>=6)
+            {
+                r_hour=12-i_hour;
+                r_min=0;
+                if(r_hour==0)r_hour=12;
+            }
+            else
+            {
+                r_hour=(6-i_hour)+6;
+                r_min=0;
+            }
+        }
+        else
+        {
+            if(i_hour>6 && i_hour<=12 )r_hour=11 - i_hour;
+            else if(i_hour>0 && i_hour<=6)r_hour= 5 + (6 - i_hour);
+
+            if(i_min>30)r_min= 60 - i_min;
+            else
+            {
+                r_min=(30 - i_min) +30;
+            }
+            if(r_min==60)r_min=0;
+
+            if(r_hour==-1)r_hour=11;
+            else if(i_hour==0 && r_min>0|| i_hour==11 && r_min>0)r_hour=12;
+            else if(i_hour==11 && r_min==0)r_hour=1;
+
+           /* if(i_hour==0 && i_min==0 || i_hour==12 && i_min==0)r_hour=12;
+            else if(i_hour==6 && i_min==0)r_hour=6;*/
+        }
+
+
+        if(r_min<10 && r_hour<10)printf("0%lld:0%lld\n", r_hour, r_min);
+        else if(r_min<10 )printf("%lld:0%lld\n", r_hour, r_min);
+        else if(r_hour<10)printf("0%lld:%lld\n", r_hour, r_min);
+        else{printf("%lld:%lld\n", r_hour, r_min);}
+
+
+    }
+
+    return 0;
+}

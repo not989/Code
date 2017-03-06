@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int n, d, r,morning[130],evening[130],i,sum, j, total;
+
+    while(scanf("%lld%lld%lld",&n, &d, &r)==3 && (n!=0 && d!=0 &&r!=0))
+    {
+        for(i=0; i<n; i++)scanf("%lld", &morning[i]);
+
+        for(j=0; j<n; j++)scanf("%lld", &evening[j]);
+
+        sort(morning, morning+i);
+        sort(evening, evening+j);
+        total=0;
+
+        for(i=0,j=(n-1); i<n; i++,j--)
+        {
+            sum=morning[i] + evening[j];
+
+            if(sum>d)total=total+((sum-d)*r);
+        }
+        printf("%lld\n",total);
+    }
+
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int n=1, ar[10005],i=0,j,median;
+
+    while(scanf("%lld", &ar[i])==1)
+    {
+
+
+        if(n==1)printf("%lld\n",ar[i]);
+
+        else if(n==2)printf("%lld\n", (ar[0]+ar[1])/2);
+
+        else
+        {
+            sort(ar, ar+n);
+
+            if(n%2==0)
+            {
+                median=(ar[i/2] + ar[(i/2)+1])/2;
+                printf("%lld\n",median);
+            }
+            else
+            {
+                printf("%lld\n",ar[i/2]);
+            }
+        }
+        i++;n++;
+    }
+
+    return 0;
+}

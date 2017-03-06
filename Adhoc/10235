@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <math.h>
+long long int prime(long long int n)
+{
+    int i;
+    if(n%2==0)return 0;
+    else if(n==1 || n==2)return 1;
+    else{
+        for(i=3;i<=sqrt(n);i=i+2){
+            if(n%i==0)return 0;
+        }
+        return 1;
+    }
+}
+
+int main()
+{
+   long long int n,p,l,i,j,k,m,sum,count;
+   long long int a[200];
+
+   while(scanf("%lld",&n)==1){
+        count=0;
+
+        p=prime(n);
+        if(p==1){
+            l=n;
+            for(i=0; i<=10;i++){
+                a[i]=l%10;
+                l=l/10;
+                if(l==0 && (l%10)==0)break;
+                count++;
+
+            }
+                j=0;sum=0;
+            for(; count >= 0;count--){
+                k=pow(10 , count);
+
+                sum=sum+(a[j]*k);
+                j++;
+            }
+            m=prime(sum);
+            if(sum==n){printf("%lld is prime.\n",n);}
+            else if(m==1)printf("%lld is emirp.\n",n);
+
+            else{printf("%lld is prime.\n",n);}
+            }
+
+        else{printf("%lld is not prime.\n",n);}
+    }
+    return 0;
+}
+

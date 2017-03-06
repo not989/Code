@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+    long long int s,d,n,a,b,i;
+
+    scanf("%lld", &n);
+
+    for(i=0; i<n; i++)
+    {
+        scanf("%lld%lld", &s, &d);
+        if(d>s || (s+d)%2 != 0)
+        {
+            printf("impossible\n");
+        }
+        else
+        {
+            a=(s+d)/2;
+            b=(s-d)/2;
+
+            if(a>b)
+            {
+                printf("%lld %lld\n", a, b);
+            }
+            else
+            {
+                printf("%lld %lld\n", b, a);
+            }
+
+        }
+    }
+    return 0;
+}

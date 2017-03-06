@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    long long int test,num,size,anim,degree,sum,i,j;
+
+    scanf("%lld", &test);
+
+    for(i=0;i<test; i++)
+    {
+        scanf("%lld", &num);
+        sum=0;
+        for(j=0; j<num; j++)
+        {
+            scanf("%lld%lld%lld", &size, &anim, &degree);
+
+            sum=sum+(size*degree);
+        }
+
+        printf("%lld\n", sum);
+    }
+    return 0;
+}

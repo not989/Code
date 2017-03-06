@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    long long int a[15],b[15];
+    int i,n;
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++){
+        scanf("%lld%lld",&a[i], &b[i]);
+    }
+    for(i=0;i<n;i++){
+        if(a[i]>b[i]){
+            printf(">\n");
+        }
+        else if(a[i]<b[i]){
+            printf("<\n");
+        }
+        else{printf("=\n");}
+    }
+
+    return 0;
+}
+

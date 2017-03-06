@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int a[100],i,j,n,m,high,low;
+
+    scanf("%lld", &n);
+
+    for(i=1; i<=n; i++){
+        high=0;low=0;
+
+        scanf("%lld", &m);
+
+        for(j=0;j<m;j++){
+            scanf("%lld", &a[j]);
+        }
+        for(j=0;j<(m-1);j++){
+
+            if(a[j] < a[j+1])high++;
+            else if(a[j] > a[j+1])low++;
+        }
+        printf("Case %lld: %lld %lld\n", i, high, low);
+    }
+    return 0;
+}
+

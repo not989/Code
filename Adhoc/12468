@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int m,n,a,b,t;
+
+    while(scanf("%lld%lld",&m, &n)==2){
+        if(m==-1 && n==-1)break;
+
+        if(m>n){
+            t=m;
+            m=n;
+            n=t;
+        }
+
+        a=n-m;
+        b=(100+m)-n;
+
+        if(a<b){
+
+            if(a<0)printf("%lld\n",b);
+
+            else{
+                printf("%lld\n",a);
+            }
+        }
+
+        else{
+            if(b<0)printf("%lld\n",a);
+            else{
+                printf("%lld\n",b);
+            }
+        }
+
+    }
+
+    return 0;
+}
+

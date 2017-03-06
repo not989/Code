@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    long long int a[20],i,j,k,rem,div,count,sum,n,m;
+
+    scanf("%lld", &m);
+
+    for(i=0; i<m; i++){
+        count=0;sum=0;j=0;
+        scanf("%lld", &n);
+        div=n;
+
+        while(1){
+            rem=div%10;
+            div=div/10;
+            a[j]=rem;
+            j++;
+            count++;
+            if(div==0)break;
+        }
+
+        for(k=0; k<count; k++){
+            sum = sum + pow(a[k], count);
+        }
+
+        if(sum==n)printf("Armstrong\n");
+        else{
+            printf("Not Armstrong\n");
+        }
+    }
+
+    return 0;
+}
+

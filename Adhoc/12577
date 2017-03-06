@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char a[]="Hajj",b[]="Umrah",c[100];
+
+    long long int k=1,res;
+
+    while(scanf("%s",c)==1){
+
+        res=strcmp(a,c);
+
+        if(res == 0){
+
+           printf("Case %lld: Hajj-e-Akbar\n",k);
+        }
+
+        else if(res < 0){
+            printf("Case %lld: Hajj-e-Asghar\n",k);
+        }
+        else{break;}
+        k++;
+    }
+
+    return 0;
+}
+

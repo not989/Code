@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int st[200],i,sum,w,n,mv,j=1;
+
+    while(scanf("%lld", &n)==1){
+        sum=0;mv=0;
+
+        if(n==0)break;
+
+        for(i=0; i<n; i++){
+            scanf("%lld", &st[i]);
+            sum=sum+st[i];
+            w=sum/n;
+        }
+        for(i=0; i<n; i++){
+
+            if(st[i]>w){
+                mv=mv+(st[i]-w);
+            }
+        }
+        printf("Set #%lld\nThe minimum number of moves is %lld.\n\n", j++, mv);
+    }
+
+    return 0;
+}
+

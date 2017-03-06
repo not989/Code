@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int mark[1100],i,n,stud,count,j;
+    double sum,avrg,percen;
+    char ch='%';
+
+    scanf("%lld",&n);
+
+    for(i=0; i < n;i++){
+
+        sum=0;
+
+        scanf("%lld",&stud);
+
+        for(j=0; j < stud;j++){
+
+            scanf("%lld", &mark[j]);
+            sum=sum+(double)mark[j];
+        }
+        avrg = sum/(double)stud;
+
+        count=0;
+
+        for(j=0; j < stud; j++){
+
+            if(mark[j]>avrg)count++;
+        }
+        percen=(double)count/stud*100;
+
+        printf("%.3lf%c\n", percen, ch);
+
+    }
+
+    return 0;
+}
+

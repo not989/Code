@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+using  namespace std;
+
+int main()
+{
+    long long ver,ed;
+
+    while(scanf("%lld",&ver)==1)
+    {
+        if(ver==0)break;
+
+        scanf("%lld", &ed);
+
+        long long ar[1000];
+        memset(ar,  -1,  sizeof(ar));
+
+        long long i,j,k,x,y;
+        vector< long long >v[1000];
+
+        for(i=0; i<ed; i++)
+        {
+            scanf("%lld%lld",&x, &y);
+            v[x].push_back(y);
+            v[y].push_back(x);
+        }
+
+        queue< long long >q;
+        ar[0]=0;
+        q.push(0);
+        long long f=0;
+        while(!q.empty())
+        {
+            long long p=q.front();
+            q.pop();
+            for(j=0; j<v[p].size(); j++)
+            {
+                if(ar[v[p][j]]==-1)
+                {
+                    if(ar[p]==0)ar[v[p][j]]=1;
+                    else ar[v[p][j]]=0;
+
+                    q.push(v[p][j]);
+                }
+                else
+                {
+                    if(ar[v[p][j]]==ar[p])
+                    {
+                        f=1;
+                        break;
+                    }
+                }
+            }
+            if(f==1)break;
+        }
+        if(f==1)printf("NOT BICOLORABLE.\n");
+        else printf("BICOLORABLE.\n");
+    }
+    return 0;
+}

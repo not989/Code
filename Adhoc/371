@@ -1,0 +1,64 @@
+#include <stdio.h>
+int main()
+{
+    long long int i,j,p,c,b,l,count=1,max=0,k,z=3;
+
+    while(scanf("%lld%lld",&l, &i)==2){
+        count=0;max=0;
+
+        if(l==0 && i==0)break;
+
+        else if(l==1 && i==1){
+            b=l;c=i;k=1;
+            printf("Between %lld and %lld, %lld generates the longest sequence of %lld values.\n",b,c,k,z);
+            continue;
+        }
+
+        else if(l==i){
+            b=l;c=i;
+            p=l;k=l;
+            while(p!=1){
+
+                if(p%2 != 0){
+                    p=3*p + 1;}
+                
+                else{p=p / 2;}
+            count++;
+            
+            }
+
+            printf("Between %lld and %lld, %lld generates the longest sequence of %lld values.\n",b,c,k,count);
+            
+            continue;
+        }
+        else if(l>i){
+            b=i;
+            c=l;
+        }
+        else{b=l;c=i;}
+
+        j=b;
+
+        for(;j <= c;j++){
+            p=j;
+            while(p!=1){
+                if(p%2 != 0){
+                       p=3*p + 1;
+                        }
+                else{
+                        p=p / 2;
+                    }
+                     count++;
+                }
+                if(count>max){
+                    max=count;
+                    k=j;
+                }
+                count=1;
+        }
+        printf("Between %lld and %lld, %lld generates the longest sequence of %lld values.\n",b,c,k,(max-1));
+    }
+
+    return 0;
+}
+

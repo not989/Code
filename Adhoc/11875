@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int a[10],i,m,n,s,j;
+
+    scanf("%lld", &m);
+
+    for(i=1; i<=m; i++){
+        scanf("%lld", &n);
+        for(j=0; j<n; j++){
+            scanf("%lld", &a[j]);
+        }
+        s=(n/2);
+
+        printf("Case %lld: %lld\n",i, a[s]);
+    }
+
+    return 0;
+}
+

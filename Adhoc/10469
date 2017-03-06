@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long int ar1[10000],ar2[10000],rem1,rem2,num1,num2,i,j,num;
+
+    while(scanf("%lld%lld", &num1, &num2)==2)
+    {
+        for(i=0;(num1!=0 || num2!=0); i++)
+        {
+            rem1=num1%2;
+            rem2=num2%2;
+            num1=num1/2;
+            num2=num2/2;
+            ar1[i]=rem1;
+            ar2[i]=rem2;
+        }
+        num2=0;
+        for(j=0;j<i;j++)
+        {
+            if((ar1[j]==1 && ar2[j]==0) || (ar1[j]==0 && ar2[j]==1))num=1;
+            else{num=0;}
+            num2=num2+ num*pow(2,j);
+        }
+        printf("%lld\n",num2);
+    }
+    return 0;
+}
+

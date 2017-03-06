@@ -1,0 +1,53 @@
+#include <stdio.h>
+int main()
+{
+    long long int  n, p, m, rev, count, original;
+
+    while(scanf("%lld", &n)==1)
+    {
+        while(n--)
+        {
+            scanf("%lld", &p);
+            count=0;
+
+            while(1)
+            {
+                m=p;
+                original=p;
+                rev=0;
+                while(original!=0)
+                {
+                    rev=rev*10+original%10;
+                    original=original/10;
+
+                }
+
+
+
+                if(m==rev)
+                {
+                    if(count==0)
+                    {
+                        original=rev+m;
+                        p=rev+m;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                else
+                {
+                    original=rev+m;
+                    p=rev+m;
+                }
+                count++;
+            }
+
+            printf("%lld %lld\n",count, rev);
+        }
+    }
+
+    return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int i,n;
+    double c,f,c1;
+
+    scanf("%lld", &n);
+    for(i=1; i<=n; i++){
+        scanf("%lf%lf", &c, &f);
+        c1=(f/9)*5;
+        c=c+c1;
+        printf("Case %lld: %.2lf\n", i, c);
+    }
+
+    return 0;
+}

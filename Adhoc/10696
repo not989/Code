@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+long long int f91(long long int n);
+
+int main()
+{
+    long long int n,m,p,i;
+
+    while(scanf("%lld", &n)==1){
+        if(n==0)break;
+        p=f91(n);
+
+        printf("f91(%lld) = %lld\n", n, p);
+    }
+
+    return 0;
+}
+long long int f91(long long int n)
+{
+    if(n <= 100){
+        return f91(f91(n+11));
+    }
+    else{
+        return (n-10);
+    }
+}
+

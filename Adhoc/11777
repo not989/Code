@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int i,j,n;
+    double avg,t,s,f,a,sum,p,ct1,ct2,ct3;
+    scanf("%lld", &n);
+
+    for(i=1;i<=n;i++){
+        scanf("%lf%lf%lf%lf%lf%lf%lf", &t, &s, &f, &a, &ct1, &ct2, &ct3);
+
+
+        if(ct1<ct2){
+            p=ct2;
+            ct2=ct1;
+            ct1=p;
+        }
+        if(ct1<ct3){
+            ct2=ct1;
+            ct1=ct3;
+            }
+        else if(ct2<ct3)ct2=ct3;
+
+        avg=(ct1+ct2)/2;
+
+
+        sum=t+s+f+a+avg;
+
+        if(sum>=90)printf("Case %lld: A\n",i);
+        else if(sum>=80)printf("Case %lld: B\n",i);
+        else if(sum>=70)printf("Case %lld: C\n",i);
+        else if(sum>=60)printf("Case %lld: D\n",i);
+        else if(sum<60)printf("Case %lld: F\n",i);
+    }
+
+    return 0;
+}
+

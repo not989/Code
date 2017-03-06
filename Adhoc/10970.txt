@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int r,c,sum;
+
+    while(scanf("%lld%lld",&r, &c)==2){
+        sum=(c-1)+(r-1)*c;
+        printf("%lld\n",sum);
+    }
+
+    return 0;
+}

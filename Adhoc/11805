@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    long long int m,n,k,p,i,sum;
+
+    scanf("%lld", &m);
+
+    for(i=1; i<=m;i++){
+        scanf("%lld%lld%lld", &n, &k, &p);
+
+        sum=(k+p)-n;
+
+        if(sum==0)sum=n;
+        else if(sum<0)sum=n+sum;
+        else if(sum>n){
+            while(sum>n){
+                sum=sum-n;
+                if(sum==0)sum=n;
+            }
+        }
+
+        printf("Case %lld: %lld\n", i, sum);
+    }
+
+    return 0;
+}
+

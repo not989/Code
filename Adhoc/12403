@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    long long int k=0,n,cmp,t=0,i;
+    char d[]="donate", r[]="report", c[20];
+
+    scanf("%lld", &n);
+    for(i=0;i<n;i++){
+
+        scanf("%s", c);
+
+        cmp=strcmp(d,c);
+
+        if(cmp==0){
+            scanf("%lld",&t);
+            k=k+t;
+        }
+        else{
+            printf("%lld\n",k);
+        }
+    }
+
+    return 0;
+}
+

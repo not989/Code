@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main()
+{
+    long long int h, m, ala_h, ala_min, H, M, total;
+
+    while(scanf("%lld%lld%lld%lld",&h, &m, &ala_h, &ala_min)!=EOF)
+    {
+
+        if(h==0 && m==0 && ala_h==0 && ala_min==0)break;
+
+        else if(h<ala_h && m>ala_min)H=ala_h - h-1;
+
+        else if(h<ala_h  &&  m==ala_min || h<ala_h && m<ala_min )H=ala_h - h;
+
+        else if(h>ala_h && m>ala_min)H=(23+ala_h) - h;
+
+        else if(h>ala_h && m<ala_min)H=(24+ala_h) - h;
+
+        else if(h>ala_h  &&  m==ala_min)H=(24+ala_h) - h;
+
+        else if(h==ala_h && m<ala_min)H=0;
+
+        else if(h==ala_h && m>ala_min)H=(23+ala_h) - h;
+
+        else if(h==ala_h && m==ala_min)H=0;
+
+
+
+        if(m<=ala_min)M=ala_min - m;
+
+        else{M=(60+ala_min) - m;}
+
+        total=60*H + M;
+
+        printf("%lld\n",total);
+    }
+
+    return 0;
+}

@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct rate
+{
+    char c;
+    long long int value;
+};
+
+int main()
+{
+    struct rate data[10000];
+
+    char str[10000],ch;
+    long long int n,k,i,j,ct,maxi;
+
+    while(scanf("%lld", &n)==1)
+    {
+         getchar();
+        while(n--)
+        {
+            gets(str);
+
+            for(i=0; str[i]!='\0'; i++)
+            {
+                ch=str[i];
+                str[i]=tolower(ch);
+            }
+            sort(str, str+i);
+
+            maxi=0;
+
+            for(i=0,k=0; str[i]!='\0'; i++)
+            {
+                if(str[i]>='a' && str[i]<='z' || str[i]>='A' && str[i]<='Z')
+                {
+                    ch=str[i];
+                    ct=0;
+                    for(j=0; str[j]!='\0'; j++)
+                    {
+                        if(ch==str[j])
+                        {
+                            str[j]='0';
+                            ct++;
+                        }
+                    }
+                    data[k].c=ch;
+                    data[k].value=ct;
+                    k++;
+                    if(ct>maxi)maxi=ct;
+                }
+            }
+
+            for(i=0; i<k; i++)
+            {
+                if(data[i].value==maxi)
+                {
+                    printf("%c", data[i].c);
+                }
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}

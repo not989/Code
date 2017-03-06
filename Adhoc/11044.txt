@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int row,column, a, b, sum, test;
+
+    while(scanf("%lld", &test)==1)
+    {
+        while(test--)
+        {
+            scanf("%lld%lld", &row, &column);
+
+            a=row/3;
+            b=column/3;
+            sum=a*b;
+
+            printf("%lld\n", sum);
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    double radius,side,area,angle;
+
+    while(scanf("%lf%lf", &radius, &side)==2)
+    {
+        angle=(4*acos(0))/side;
+        area=((radius * radius) * sin(angle)) /2;
+
+        printf("%0.3lf\n", (side*area));
+
+    }
+    return 0;
+}

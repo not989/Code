@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    unsigned long long int num,p;
+
+    long long int s;
+
+    while(scanf("%llu", &num)==1)
+    {
+        if(num==0)break;
+
+        p=sqrt(num);
+
+        if(pow(p, 2)==num)printf("yes\n");
+
+        else{printf("no\n");}
+    }
+
+    return 0;
+}

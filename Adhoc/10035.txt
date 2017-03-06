@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    long long int  m,n,i,carry,r1,r2,r;
+
+    while(scanf("%lld%lld",&m, &n)==2)
+    {
+        if(m==0 && n==0)break;
+
+        else
+        {
+            carry=0;r=0;
+            while(m!=0 || n!=0)
+            {
+                 r1=m%10;
+                m=m/10;
+                 r2=n%10;
+                n=n/10;
+                r=(r+r1+r2)/10;
+                if(r==1)carry++;
+
+            }
+            if(carry>1)printf("%lld carry operations.\n",carry);
+            else if(carry==1)printf("1 carry operation.\n");
+            else{printf("No carry operation.\n");}
+        }
+    }
+
+    return 0;
+}

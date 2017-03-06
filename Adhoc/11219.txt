@@ -1,0 +1,90 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long c_y,c_m,c_d,b_y,b_m,b_d,n,y,m,d,i;
+
+    while(scanf("%lld",&n)==1)
+    {
+        for(i=1; i<=n; i++)
+        {
+            scanf("\n\n%lld/%lld/%lld",&c_d, &c_m, &c_y);
+            scanf("%lld/%lld/%lld",&b_d, &b_m, &b_y);
+
+            y=c_y - b_y;
+            m=c_m - b_m;
+            d=c_d - b_d;
+
+            if(y<0)printf("Case #%lld: Invalid birth date", i);
+
+            else if(y==0)
+            {
+                if(m==0)
+                {
+                    if(d<0) printf("Case #%lld: Invalid birth date", i);
+                    else
+                    {
+                        printf("Case #%lld: 0", i);
+                    }
+                }
+
+                else if(m>0)printf("Case #%lld: 0",i);
+
+                else
+                {
+                    printf("Case #%lld: Invalid birth date", i);
+                }
+            }
+
+            else if(y==1)
+            {
+                if(m==0)
+                {
+                    if(d<0)printf("Case #%lld: 0",i);
+                    else if(d==0)printf("Case #%lld: 1",i);
+                    else
+                    {
+                        printf("Case #%lld: 1", i);
+                    }
+                }
+                else if(m>0)printf("Case #%lld: 1",i);
+                else
+                {
+                    printf("Case #%lld: 0", i);
+                }
+            }
+
+            else if(y>1 && y<=130)
+            {
+                if(m<0)printf("Case #%lld: %lld", i, y-1);
+                else if(m==0)
+                {
+                    if(d>=0)printf("Case #%lld: %lld", i, y);
+                    else printf("Case #%lld: %lld", i, y-1);
+                }
+                else printf("Case #%lld: %lld", i, y);
+            }
+
+            else if(y==131)
+            {
+                if(m<0)printf("Case #%lld: %lld", i, y-1);
+                else if(m==0)
+                {
+                    if(d<0)printf("Case #%lld: %lld", i, y-1);
+                    else if(d==0)printf("Case #%lld: Check birth date",i);
+                    else printf("Case #%lld: Check birth date",i);
+                }
+                else printf("Case #%lld: Check birth date",i);
+            }
+
+            else if(y>131)
+            {
+                printf("Case #%lld: Check birth date",i);
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}

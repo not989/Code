@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    long long int i,len,m,n,o,p,q,r;
+    char a[50];
+
+    while(gets(a))
+    {
+        m=0;
+        n=0;
+        o=0;
+        p=0;
+        q=0;
+        r=0;
+
+        len=strlen(a);
+
+        for(i=0; i<len; i++)
+        {
+            if(a[i]=='B' || a[i]=='F' || a[i]=='P' || a[i]=='V')
+            {
+                if(m==0)
+                {
+                    printf("1");
+                    m=1;n=0;
+                    o=0;p=0;
+                    q=0;r=0;
+                }
+            }
+            else if(a[i]=='C' || a[i]=='G' || a[i]=='J' || a[i]=='K' || a[i]=='Q' || a[i]=='S' || a[i]=='X' || a[i]=='Z')
+            {
+                if(n==0)
+                {
+                    printf("2");
+                    n=1;m=0;
+                    o=0;p=0;
+                    q=0;r=0;
+                }
+            }
+            else if(a[i]=='D' || a[i]=='T')
+            {
+                if(o==0)
+                {
+                    printf("3");
+                    o=1;m=0;
+                    n=0;p=0;
+                    q=0;r=0;
+                }
+            }
+            else if(a[i]=='L')
+            {
+                if(p==0)
+                {
+                    printf("4");
+                    p=1;m=0;
+                    n=0;o=0;
+                    q=0;r=0;
+                }
+            }
+            else if(a[i]=='M' || a[i]=='N')
+            {
+                if(q==0)
+                {
+                    printf("5");
+                    q=1;m=0;
+                    n=0;o=0;
+                    p=0;r=0;
+                }
+            }
+            else if(a[i]=='R')
+            {
+                if(r==0)
+                {
+                    printf("6");
+                    r=1;m=0;
+                    n=0;o=0;
+                    p=0;q=0;
+                }
+            }
+            else
+            {
+                m=0;n=0;
+                o=0;p=0;
+                q=0;r=0;
+            }
+        }
+        printf("\n");
+
+    }
+
+    return 0;
+}
+

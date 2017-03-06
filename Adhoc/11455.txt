@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+    long long int n,i,a,b,c,d;
+
+    scanf("%lld",&n);
+    for(i=0; i<n; i++)
+    {
+        scanf("%lld%lld%lld%lld", &a, &b, &c, &d);
+
+        if((a+b+c)>d && (a+b+d)>c && (a+d+c)>b && (d+b+c)>a)
+        {
+            if(a==b && b==c && c==d)
+            {
+                printf("square\n");
+            }
+            else if(a==b && c==d || a==c && b==d || a==d && c==b)
+            {
+                printf("rectangle\n");
+            }
+            else
+            {
+                printf("quadrangle\n");
+            }
+        }
+        else
+        {
+            printf("banana\n");
+        }
+    }
+
+    return 0;
+}

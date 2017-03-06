@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double case_num,distance, tide, boat, i,t_stright, t_min, t;
+
+    scanf("%lf", &case_num );
+
+    for(i=1; i<=case_num; i++)
+    {
+        scanf("%lf%lf%lf", &distance, &tide, &boat);
+
+        if(tide==0 ||boat<=tide)
+            printf("Case %.0lf: can't determine\n", i);
+
+        else
+        {
+            t_min=distance/boat;
+            t_stright=distance/(sqrt(boat*boat - tide*tide));
+
+            t=fabs(t_stright - t_min);
+
+            printf("Case %.0lf: %.3lf\n", i, t);
+        }
+    }
+
+    return 0;
+}

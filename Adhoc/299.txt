@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main()
+{
+    long long int cari_arry[80], case_num, cari_num, i, j, k,l, count;
+
+    scanf("%lld", &case_num);
+
+    for(i=0; i<case_num; i++)
+    {
+        count=0;
+        scanf("%lld", &cari_num);
+
+        for(j=0; j<cari_num;j++)
+        {
+            scanf("%lld", &cari_arry[j]);
+        }
+
+        for(k=0;k<cari_num;k++)
+            for(l=k;l<cari_num; l++)
+        {
+            if(cari_arry[k]>cari_arry[l])
+                count++;
+        }
+
+        printf("Optimal train swapping takes %lld swaps.\n",count);
+    }
+
+    return 0;
+}
