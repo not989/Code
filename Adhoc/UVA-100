@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+    long long int i,j,p,c,b,l,count=1,max=0;
+
+    while(scanf("%lld%lld",&l, &i)==2){
+            count=1;max=0;
+    if(l>i){
+        b=i;
+        c=l;
+    }
+    else{b=l;c=i;}
+    j=b;
+
+    for(;j <= c;j++){
+        p=j;
+        while(p!=1){
+            if(p%2 != 0){
+                   p=3*p + 1;
+                    }
+            else{
+                    p=p / 2;
+                }
+                 count++;
+            }
+            if(count>max)max=count;
+            count=1;
+    }
+    printf("%lld %lld %lld\n",l,i,max);
+    }
+    return 0;
+}
